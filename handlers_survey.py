@@ -441,7 +441,7 @@ async def process_kassa(message: Message, state: FSMContext):
     if "PDF" in choice or "помощь" in choice:
         await message.answer("Подробнее про кассы и эквайринг в файле ниже:")
         try:
-            await message.answer_document(get_pdf("Касса и эквайринг.pdf"))
+            await message.answer_document(get_pdf("Касса.pdf"))
         except:
             await message.answer("Файл не найден.")
         await message.answer("Что выберете?", reply_markup=kb_kassa_types)
@@ -482,7 +482,7 @@ async def process_acquiring_dec(message: Message, state: FSMContext):
     if "PDF" in choice:
         await message.answer("Что такое эквайринг описали в файле ниже:")
         try:
-            await message.answer_document(get_pdf("Касса и эквайринг.pdf"))
+            await message.answer_document(get_pdf("Эквайринг.pdf"))
         except:
             await message.answer("Файл не найден.")
         await message.answer("Нужен ли эквайринг?", reply_markup=kb_acquiring_decision)
